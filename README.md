@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TodoApp
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
@@ -57,3 +58,6 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# todo-app
+>>>>>>> 4ff7f6a069b8e6943f9320109d435b0244c531d3
