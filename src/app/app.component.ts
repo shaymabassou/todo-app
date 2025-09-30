@@ -36,32 +36,36 @@ import { RouterOutlet } from '@angular/router';
   `,
   styles: [`
     :host {
-      --primary-color: #6366f1;
-      --primary-dark: #4f46e5;
-      --primary-light: #818cf8;
-      --secondary-color: #f59e0b;
-      --success-color: #10b981;
-      --danger-color: #ef4444;
+      --primary-color: #8b5cf6;
+      --primary-dark: #7c3aed;
+      --primary-light: #a78bfa;
+      --secondary-color: #ec4899;
+      --success-color: #14b8a6;
+      --danger-color: #f43f5e;
       --warning-color: #f59e0b;
-      --gray-50: #f9fafb;
-      --gray-100: #f3f4f6;
-      --gray-200: #e5e7eb;
-      --gray-300: #d1d5db;
-      --gray-400: #9ca3af;
-      --gray-500: #6b7280;
-      --gray-600: #4b5563;
-      --gray-700: #374151;
-      --gray-800: #1f2937;
-      --gray-900: #111827;
+      --accent-cyan: #06b6d4;
+      --accent-orange: #fb923c;
+      --gray-50: #fafafa;
+      --gray-100: #f4f4f5;
+      --gray-200: #e4e4e7;
+      --gray-300: #d4d4d8;
+      --gray-400: #a1a1aa;
+      --gray-500: #71717a;
+      --gray-600: #52525b;
+      --gray-700: #3f3f46;
+      --gray-800: #27272a;
+      --gray-900: #18181b;
       --white: #ffffff;
       
       --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
       --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
       --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
       --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --shadow-colored: 0 20px 25px -5px rgb(139 92 246 / 0.3), 0 8px 10px -6px rgb(139 92 246 / 0.2);
       
-      --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-      --gradient-secondary: linear-gradient(135deg, var(--secondary-color), #fbbf24);
+      --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+      --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+      --gradient-success: linear-gradient(135deg, #14b8a6 0%, #10b981 100%);
       --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
 
@@ -71,7 +75,7 @@ import { RouterOutlet } from '@angular/router';
 
     .app-container {
       min-height: 100vh;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 50%, #e9d5ff 100%);
       position: relative;
       overflow-x: hidden;
     }
@@ -114,7 +118,7 @@ import { RouterOutlet } from '@angular/router';
       align-items: center;
       justify-content: center;
       color: white;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-colored);
     }
 
     .logo-text {
@@ -135,32 +139,36 @@ import { RouterOutlet } from '@angular/router';
     .bg-decoration {
       position: fixed;
       border-radius: 50%;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(129, 140, 248, 0.05));
       z-index: 0;
       animation: float 6s ease-in-out infinite;
+      filter: blur(60px);
+      opacity: 0.4;
     }
 
     .decoration-1 {
-      width: 300px;
-      height: 300px;
-      top: -150px;
-      right: -150px;
+      width: 400px;
+      height: 400px;
+      top: -200px;
+      right: -200px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.4), rgba(236, 72, 153, 0.2));
       animation-delay: 0s;
     }
 
     .decoration-2 {
-      width: 200px;
-      height: 200px;
-      bottom: -100px;
-      left: -100px;
+      width: 300px;
+      height: 300px;
+      bottom: -150px;
+      left: -150px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.3), rgba(59, 130, 246, 0.2));
       animation-delay: -2s;
     }
 
     .decoration-3 {
-      width: 150px;
-      height: 150px;
-      top: 30%;
-      right: -75px;
+      width: 250px;
+      height: 250px;
+      top: 40%;
+      right: -125px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.3), rgba(251, 146, 60, 0.2));
       animation-delay: -4s;
     }
 
@@ -199,44 +207,44 @@ import { RouterOutlet } from '@angular/router';
       .btn-primary {
         background: var(--gradient-primary);
         color: white;
-        box-shadow: var(--shadow-md);
+        box-shadow: var(--shadow-colored);
       }
 
       .btn-primary:hover:not(:disabled) {
         transform: translateY(-1px);
-        box-shadow: var(--shadow-lg);
+        box-shadow: var(--shadow-xl);
       }
 
       .btn-success {
-        background: var(--success-color);
+        background: var(--gradient-success);
         color: white;
-        box-shadow: var(--shadow-md);
+        box-shadow: 0 4px 6px rgba(20, 184, 166, 0.3);
       }
 
       .btn-success:hover:not(:disabled) {
-        background: #059669;
+        background: linear-gradient(135deg, #0d9488 0%, #059669 100%);
         transform: translateY(-1px);
       }
 
       .btn-warning {
-        background: var(--warning-color);
+        background: linear-gradient(135deg, #f59e0b 0%, #fb923c 100%);
         color: white;
-        box-shadow: var(--shadow-md);
+        box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);
       }
 
       .btn-warning:hover:not(:disabled) {
-        background: #d97706;
+        background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
         transform: translateY(-1px);
       }
 
       .btn-danger {
-        background: var(--danger-color);
+        background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
         color: white;
-        box-shadow: var(--shadow-md);
+        box-shadow: 0 4px 6px rgba(244, 63, 94, 0.3);
       }
 
       .btn-danger:hover:not(:disabled) {
-        background: #dc2626;
+        background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
         transform: translateY(-1px);
       }
 
@@ -285,7 +293,7 @@ import { RouterOutlet } from '@angular/router';
       .form-control:focus {
         outline: none;
         border-color: var(--primary-color);
-        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
       }
 
       .form-control.is-invalid {
@@ -314,6 +322,7 @@ import { RouterOutlet } from '@angular/router';
       .bg-info {
         background: var(--gradient-primary);
         color: white;
+        box-shadow: var(--shadow-colored);
       }
 
       /* Alerts */
@@ -324,7 +333,7 @@ import { RouterOutlet } from '@angular/router';
       }
 
       .alert-info {
-        background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+        background: linear-gradient(135deg, #ddd6fe, #c4b5fd);
         color: var(--primary-dark);
         border-color: var(--primary-light);
       }

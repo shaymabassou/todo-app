@@ -35,7 +35,7 @@ export const taskReducer = createReducer(
     console.log('Reducer: Adding task', task);
     return {
       ...state,
-      tasks: [...state.tasks, task],
+      tasks: [...state.tasks, task],// <--- l'etat en ajoutant la tache a la liste 
       error: null
     };
   }),

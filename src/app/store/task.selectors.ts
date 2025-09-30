@@ -6,7 +6,7 @@ export const selectTaskState = createFeatureSelector<TaskState>('tasks');
 
 export const selectTasks = createSelector(
   selectTaskState, 
-  (state: TaskState) => state.tasks
+  (state: TaskState) => state.tasks //Émet la nouvelle liste
 );
 
 export const selectTasksLoading = createSelector(

@@ -15,18 +15,18 @@ export class TaskService {
 
   setUser(email: string) {
     console.log('Setting user:', email);
-    this.user = email;
+    this.user = email;// Email stocké dans le service
   }
 
   clearUser() {
     const currentUser = this.user;
     this.user = null;
-    // Supprimer les tâches spécifiques à l'utilisateur
+    
     if (currentUser) {
       localStorage.removeItem(`tasks_${currentUser}`);
     }
   }
-
+// les methodes d crud
   getTasks(): Observable<Task[]> {
     if (!this.currentUser) {
       return of([]);
@@ -50,11 +50,11 @@ export class TaskService {
       completed: task.completed || false 
     };
     
-    // Charger les tâches existantes
+    
     const existingTasks = this.getTasksFromStorage();
     existingTasks.push(newTask);
     
-    // Sauvegarder
+  
     this.saveTasksToStorage(existingTasks);
     console.log('Task added to localStorage:', newTask);
     

@@ -15,11 +15,12 @@ export class TaskEffects {
     this.actions$.pipe(
       ofType(TaskActions.loadTasks),
       mergeMap(() =>
-        this.taskService.getTasks().pipe(
+        this.taskService.getTasks().pipe( // <--- sauvgarder dans localstorage
           map(tasks => TaskActions.loadTasksSuccess({ tasks })),
           catchError(error => {
             console.error('Error loading tasks:', error);
-            return of(TaskActions.loadTasksSuccess({ tasks: [] }));
+            return of(TaskActions.loadTasksSuccess({ tasks: [] })); //<---declencher une action succes 
+            
           })
         )
       )
